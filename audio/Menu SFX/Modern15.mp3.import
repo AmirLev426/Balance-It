@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brcx545lipvhi"
+path="res://.godot/imported/Modern15.mp3-7d553b282e0845c43ee942ed9575cfab.mp3str"
+
+[deps]
+
+source_file="res://audio/Menu SFX/Modern15.mp3"
+dest_files=["res://.godot/imported/Modern15.mp3-7d553b282e0845c43ee942ed9575cfab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

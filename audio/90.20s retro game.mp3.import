@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2qkdmg1i6pkh"
+path="res://.godot/imported/90.20s retro game.mp3-82815be687de49b1e3e69ada0e081893.mp3str"
+
+[deps]
+
+source_file="res://audio/90.20s retro game.mp3"
+dest_files=["res://.godot/imported/90.20s retro game.mp3-82815be687de49b1e3e69ada0e081893.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

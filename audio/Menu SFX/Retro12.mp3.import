@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7mr3pqagqg4p"
+path="res://.godot/imported/Retro12.mp3-93b2bd768ee6e417548d7fb04fe8373b.mp3str"
+
+[deps]
+
+source_file="res://audio/Menu SFX/Retro12.mp3"
+dest_files=["res://.godot/imported/Retro12.mp3-93b2bd768ee6e417548d7fb04fe8373b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

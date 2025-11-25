@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bim1sclb3lm1o"
+path="res://.godot/imported/Retro11.mp3-873ca1595ca32600e096f4e80bcb2ff4.mp3str"
+
+[deps]
+
+source_file="res://audio/Menu SFX/Retro11.mp3"
+dest_files=["res://.godot/imported/Retro11.mp3-873ca1595ca32600e096f4e80bcb2ff4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

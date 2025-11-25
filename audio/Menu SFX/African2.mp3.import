@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bv6c6k3g8t5dt"
+path="res://.godot/imported/African2.mp3-411e8af22b3702fdae072df47187e49a.mp3str"
+
+[deps]
+
+source_file="res://audio/Menu SFX/African2.mp3"
+dest_files=["res://.godot/imported/African2.mp3-411e8af22b3702fdae072df47187e49a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
