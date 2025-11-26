@@ -80,7 +80,7 @@ theme_override_colors/font_hover_color = Color(0, 0.9490196, 0.9490196, 1)
 text = "test"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Level1" type="Label" parent="."]
 offset_left = -152.0
 offset_top = -98.0
 offset_right = -106.0

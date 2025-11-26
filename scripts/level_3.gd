@@ -1,11 +1,9 @@
 extends Node2D
 
-@onready var audio: Node2D = $Audio
-
-func _ready():
-	pass
-
-
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
+	call_deferred("queue_free")
+	call_deferred("change_scene")
 	LevelCore.lvl3_completed = true
+
+func change_scene() -> void:
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")

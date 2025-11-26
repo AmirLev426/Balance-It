@@ -30,7 +30,6 @@ func _ready() -> void:
 
 	if LevelCore.lvl2_completed == false:
 		lvl_2_locked.visible = true
-		lock_2.visible = true
 	
 	#LEVEL 3 CODE
 	if LevelCore.lvl3_completed == true:
@@ -42,23 +41,23 @@ func _ready() -> void:
 
 func _on_lvl_1_button_pressed() -> void:
 	if LevelCore.lvl1_completed == false:
-		get_tree().change_scene_to_file("res://scenes/level1.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
 	else:
-		get_tree().change_scene_to_file("res://scenes/level1.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
 
 
 func _on_lvl_2_button_pressed() -> void:
 	if LevelCore.lvl1_completed == false:
 		pass #null 
 	if LevelCore.lvl1_completed == true:
-		get_tree().change_scene_to_file("res://scenes/level2.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 
 
 func _on_lvl_3_button_pressed() -> void:
 	if LevelCore.lvl2_completed == false:
 		pass
 	if LevelCore.lvl2_completed == true:
-		get_tree().change_scene_to_file("res://scenes/level3.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_3.tscn")
 
 
 func _on_back_pressed() -> void:
