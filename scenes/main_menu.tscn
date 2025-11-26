@@ -115,6 +115,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
 text = "Start game"
 
+[node name="SelectLevel" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "Select Level"
+
 [node name="OptionsButton" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 7
@@ -362,11 +377,11 @@ bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("10_flqon")
-volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/SelectLevel" to="." method="_on_select_level_pressed"]
 [connection signal="pressed" from="MainButtons/OptionsButton" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainButtons/ExitButton" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]

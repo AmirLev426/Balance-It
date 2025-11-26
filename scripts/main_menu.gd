@@ -10,7 +10,10 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	audio.random_sfx()
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/level1.tscn") #need to change to last level beat
+
+func _on_select_level_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
 func _on_options_pressed() -> void:
 	audio.random_sfx()

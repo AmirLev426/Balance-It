@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://pmpahgb3yp6p"]
+
+[ext_resource type="Script" uid="uid://b0tag5v835prf" path="res://scripts/level_2.gd" id="1_eqxsl"]
+[ext_resource type="PackedScene" uid="uid://bv4st2ckwqv5o" path="res://scenes/movable_block.tscn" id="1_pbc48"]
+[ext_resource type="Texture2D" uid="uid://c1r02n1m56ead" path="res://assets/icon.svg" id="2_eqxsl"]
+[ext_resource type="Texture2D" uid="uid://6w71fh3mc2ij" path="res://assets/kenney_physics-assets/PNG/Stone elements/elementStone013.png" id="3_b4j7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo48x"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0kc7"]
+size = Vector2(220, 70)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b4j7a"]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_eqxsl")
+
+[node name="MovableBlock" parent="." instance=ExtResource("1_pbc48")]
+
+[node name="StaticBlock" type="StaticBody2D" parent="."]
+position = Vector2(-79, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBlock"]
+shape = SubResource("RectangleShape2D_wo48x")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBlock"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_eqxsl")
+
+[node name="StaticBlock2" type="StaticBody2D" parent="."]
+position = Vector2(56, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBlock2"]
+shape = SubResource("RectangleShape2D_wo48x")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBlock2"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_eqxsl")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 71)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0, 34)
+shape = SubResource("RectangleShape2D_y0kc7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(0, 34)
+texture = ExtResource("3_b4j7a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -110.0
+offset_top = -80.0
+offset_right = -64.0
+offset_bottom = -57.0
+text = "level2"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Finish" type="Label" parent="Area2D"]
+offset_left = -94.0
+offset_top = -366.0
+offset_right = 95.0
+offset_bottom = -283.0
+theme_override_font_sizes/font_size = 60
+text = "Finish"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -300)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_b4j7a")

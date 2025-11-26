@@ -29,13 +29,16 @@ func _on_resume_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	audio.random_sfx()
-	resume()
 	get_tree().reload_current_scene()
+	resume()
 
-func _on_quit_pressed() -> void:
+func _on_change_level_pressed() -> void:
 	audio.random_sfx()
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
-@warning_ignore("unused_parameter")
-func _process(delta):
+func _on_main_menu_pressed() -> void:
+	audio.random_sfx()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _process(_delta):
 	testEsc()
