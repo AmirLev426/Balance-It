@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://pmpahgb3yp6p"]
+[gd_scene load_steps=9 format=3 uid="uid://pmpahgb3yp6p"]
 
 [ext_resource type="Script" uid="uid://b0tag5v835prf" path="res://scripts/level_2.gd" id="1_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://bv4st2ckwqv5o" path="res://scenes/movable_block.tscn" id="1_pbc48"]
 [ext_resource type="Texture2D" uid="uid://c1r02n1m56ead" path="res://assets/icon.svg" id="2_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://dssb1hu8qvte6" path="res://scenes/pause_menu.tscn" id="2_y0kc7"]
 [ext_resource type="Texture2D" uid="uid://6w71fh3mc2ij" path="res://assets/kenney_physics-assets/PNG/Stone elements/elementStone013.png" id="3_b4j7a"]
-[ext_resource type="Script" uid="uid://bxmd3qlh8k58g" path="res://scripts/spawner.gd" id="6_ne2mo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
 size = Vector2(220, 70)
@@ -63,23 +62,6 @@ texture = ExtResource("2_eqxsl")
 [node name="MovableBlock" parent="." instance=ExtResource("1_pbc48")]
 position = Vector2(-16, -77)
 
-[node name="Spawner" type="Sprite2D" parent="."]
-position = Vector2(-479, -211)
-texture = ExtResource("2_eqxsl")
-script = ExtResource("6_ne2mo")
-
-[node name="Button" type="Button" parent="Spawner"]
-anchors_preset = -1
-anchor_left = -0.5
-anchor_top = -0.515625
-anchor_right = 0.4375
-anchor_bottom = 0.4140625
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_colors/font_hover_color = Color(0, 0.9490196, 0.9490196, 1)
-text = "test"
-metadata/_edit_use_anchors_ = true
-
 [node name="Level2" type="Label" parent="."]
 offset_left = -152.0
 offset_top = -98.0
@@ -105,5 +87,4 @@ position = Vector2(0, -300)
 rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_6sh32")
 
-[connection signal="pressed" from="Spawner/Button" to="Spawner" method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
