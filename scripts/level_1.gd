@@ -9,6 +9,7 @@ var movable_block2 = preload("res://scenes/movable_block2.tscn")
 var all_blocks = [movable_block, movable_block2]
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	
 	call_deferred("queue_free")
 	call_deferred("change_scene")
 	LevelCore.lvl1_completed = true
