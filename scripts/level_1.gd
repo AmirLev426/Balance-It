@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var spawner: Button = $spawner
 @onready var rng_spawner: Button = $rng_spawner
+@onready var movable_block2D = $MovableBlock
 
 var movable_block = preload("res://scenes/movable_block.tscn")
 var movable_block2 = preload("res://scenes/movable_block2.tscn")
@@ -9,10 +10,15 @@ var movable_block2 = preload("res://scenes/movable_block2.tscn")
 var all_blocks = [movable_block, movable_block2]
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	
-	call_deferred("queue_free")
-	call_deferred("change_scene")
-	LevelCore.lvl1_completed = true
+	if _body.linear_velocity.length() < 0.1:
+		print("check once if block not moving")
+		await get_tree().create_timer(3.0).timeout
+		if _body.linear_velocity.length() < 0.1 and $Area2D.get_overlapping_bodies().has(RigidBody2D): #DOES NOT WORK
+			print("check second time")
+			print("You won !")
+			LevelCore.lvl1_completed = true
+			call_deferred("queue_free")
+			call_deferred("change_scene")
 
 func change_scene() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
