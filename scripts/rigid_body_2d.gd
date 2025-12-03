@@ -11,7 +11,7 @@ var of = Vector2(0,0)
 func _process(delta):
 	if dragging:
 		global_position = get_global_mouse_position() - of
-		sprite_2d.z_index = 10
+		sprite_2d.z_index = 2
 
 func _on_button_button_down() -> void:
 	print("DOWN ", self)
@@ -19,7 +19,7 @@ func _on_button_button_down() -> void:
 	dragging = true
 	freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 	movable_block.collision_layer = 2
-	sprite_2d.z_index = 10
+	sprite_2d.z_index = 2
 	
 	freeze = true
 	if rotation_degrees != 0:
