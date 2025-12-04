@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cenxc21n1a3ro" path="res://scripts/level_1.gd" id="1_6sh32"]
 [ext_resource type="PackedScene" uid="uid://dssb1hu8qvte6" path="res://scenes/pause_menu.tscn" id="2_ejswk"]
-[ext_resource type="Script" uid="uid://b25i61y4bi7h2" path="res://scenes/camera_2d.gd" id="3_fcfvj"]
+[ext_resource type="Script" uid="uid://b25i61y4bi7h2" path="res://scripts/camera_2d.gd" id="3_fcfvj"]
 [ext_resource type="Texture2D" uid="uid://c1r02n1m56ead" path="res://assets/icon.svg" id="4_conm7"]
 [ext_resource type="PackedScene" uid="uid://bv4st2ckwqv5o" path="res://scenes/movable_block.tscn" id="5_d3jkd"]
 [ext_resource type="Texture2D" uid="uid://cesm2l8f8t8kh" path="res://assets/kenney_physics-assets/PNG/Backgrounds/colored_grass.png" id="7_pa8r4"]
