@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b0u4lwusj3pbd"]
+[gd_scene load_steps=3 format=3 uid="uid://b0u4lwusj3pbd"]
+
+[ext_resource type="Script" uid="uid://4jnyd88cbtch" path="res://scenes/spawner.gd" id="1_fnge6"]
+[ext_resource type="Script" uid="uid://bias0lqxdulaq" path="res://scenes/rng_spawner.gd" id="2_a45jx"]
 
 [node name="In Game UI" type="Control"]
 layout_mode = 3
@@ -7,3 +10,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="spawner" type="Button" parent="CanvasLayer"]
+offset_left = 141.0
+offset_top = 89.0
+offset_right = 246.0
+offset_bottom = 120.0
+text = "Block 1"
+script = ExtResource("1_fnge6")
+
+[node name="rng_spawner" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.32291666
+anchor_top = 0.5601852
+anchor_right = 0.32291666
+anchor_bottom = 0.5601852
+offset_left = -227.0
+offset_top = -230.0
+offset_right = -122.0
+offset_bottom = -199.0
+text = "Random"
+script = ExtResource("2_a45jx")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/spawner" to="CanvasLayer/spawner" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/rng_spawner" to="CanvasLayer/rng_spawner" method="_on_pressed"]
