@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dssb1hu8qvte6"]
+[gd_scene load_steps=12 format=3 uid="uid://dssb1hu8qvte6"]
 
 [ext_resource type="Script" uid="uid://b2bnm8x7qjtvq" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="Shader" uid="uid://g85wem85y1a3" path="res://shaders/pause_menu.gdshader" id="1_n87rw"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://xntqeyrce18c" path="res://audio/Menu SFX/Coffee1.mp3" id="4_1s2dm"]
 [ext_resource type="AudioStream" uid="uid://8tdesnmmukqn" path="res://audio/Menu SFX/Coffee2.mp3" id="5_88e76"]
 [ext_resource type="AudioStream" uid="uid://2qkdmg1i6pkh" path="res://audio/90.20s retro game.mp3" id="6_knqa7"]
+[ext_resource type="Script" uid="uid://b6nleg6ug0xqd" path="res://scenes/mouse_ignore.gd" id="7_1s2dm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_myx47"]
 shader = ExtResource("1_n87rw")
@@ -194,18 +195,22 @@ theme_override_constants/separation = 4
 [node name="Resume" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Resume"
+script = ExtResource("7_1s2dm")
 
 [node name="Restart" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Restart"
+script = ExtResource("7_1s2dm")
 
 [node name="Change Level" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Change level"
+script = ExtResource("7_1s2dm")
 
 [node name="MainMenu" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Main menu"
+script = ExtResource("7_1s2dm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

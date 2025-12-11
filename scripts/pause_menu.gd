@@ -13,6 +13,7 @@ func resume():
 	is_paused = false
 	get_tree().paused = false
 	canvas_layer.layer = 0
+	#ignore clicks on buttons 
 
 func pause():
 	$AnimationPlayer.play("blur")
