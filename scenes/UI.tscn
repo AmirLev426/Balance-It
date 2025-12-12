@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4xlacwww0oef"]
+
+[ext_resource type="Script" uid="uid://be7b4ubao4q2t" path="res://scripts/ui.gd" id="1_b3bc3"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3bc3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="spawner" type="Button" parent="CanvasLayer"]
+offset_left = 132.0
+offset_top = 340.0
+offset_right = 237.0
+offset_bottom = 371.0
+text = "Block 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="rng_spawner" type="Button" parent="CanvasLayer"]
+offset_left = 129.0
+offset_top = 279.0
+offset_right = 234.0
+offset_bottom = 310.0
+text = "Random"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/spawner" to="." method="_on_spawner_pressed"]
+[connection signal="pressed" from="CanvasLayer/rng_spawner" to="." method="_on_rng_spawner_pressed"]

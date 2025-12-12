@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://xntqeyrce18c" path="res://audio/Menu SFX/Coffee1.mp3" id="4_1s2dm"]
 [ext_resource type="AudioStream" uid="uid://8tdesnmmukqn" path="res://audio/Menu SFX/Coffee2.mp3" id="5_88e76"]
 [ext_resource type="AudioStream" uid="uid://2qkdmg1i6pkh" path="res://audio/90.20s retro game.mp3" id="6_knqa7"]
-[ext_resource type="Script" uid="uid://b6nleg6ug0xqd" path="res://scenes/mouse_ignore.gd" id="7_1s2dm"]
+[ext_resource type="Script" uid="uid://b6nleg6ug0xqd" path="res://scripts/mouse_ignore.gd" id="7_1s2dm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_myx47"]
 shader = ExtResource("1_n87rw")

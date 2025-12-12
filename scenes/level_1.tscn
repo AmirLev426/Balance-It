@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://6w47kqrsmhon"]
+[gd_scene load_steps=10 format=3 uid="uid://6w47kqrsmhon"]
 
 [ext_resource type="Script" uid="uid://cenxc21n1a3ro" path="res://scripts/level_1.gd" id="1_6sh32"]
 [ext_resource type="PackedScene" uid="uid://dssb1hu8qvte6" path="res://scenes/pause_menu.tscn" id="2_ejswk"]
 [ext_resource type="Script" uid="uid://b25i61y4bi7h2" path="res://scripts/camera_2d.gd" id="3_fcfvj"]
 [ext_resource type="Texture2D" uid="uid://c1r02n1m56ead" path="res://assets/icon.svg" id="4_conm7"]
 [ext_resource type="PackedScene" uid="uid://bv4st2ckwqv5o" path="res://scenes/movable_block.tscn" id="5_d3jkd"]
+[ext_resource type="PackedScene" uid="uid://b4xlacwww0oef" path="res://scenes/UI.tscn" id="7_15mv3"]
 [ext_resource type="Texture2D" uid="uid://cesm2l8f8t8kh" path="res://assets/kenney_physics-assets/PNG/Backgrounds/colored_grass.png" id="7_pa8r4"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6sh32"]
+[ext_resource type="PackedScene" uid="uid://3q1xy0r2656b" path="res://scenes/win_condition.tscn" id="8_15mv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcfvj"]
 size = Vector2(128, 128)
@@ -21,50 +21,6 @@ position = Vector2(1.1920929e-07, -212)
 scale = Vector2(1.1240234, 1.046875)
 texture = ExtResource("7_pa8r4")
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_ejswk")]
-metadata/_edit_use_anchors_ = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_enabled = false
-script = ExtResource("3_fcfvj")
-
-[node name="MovableBlock" parent="." instance=ExtResource("5_d3jkd")]
-position = Vector2(-16, -77)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Finish" type="Label" parent="Area2D"]
-offset_left = -94.0
-offset_top = -366.0
-offset_right = 95.0
-offset_bottom = -283.0
-theme_override_font_sizes/font_size = 60
-text = "Finish"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -300)
-rotation = 3.1415927
-shape = SubResource("WorldBoundaryShape2D_6sh32")
-
-[node name="spawner" type="Button" parent="."]
-offset_left = -310.0
-offset_top = -18.0
-offset_right = -205.0
-offset_bottom = 13.0
-text = "Block 1"
-metadata/_edit_use_anchors_ = true
-
-[node name="rng_spawner" type="Button" parent="."]
-offset_left = -313.0
-offset_top = -79.0
-offset_right = -208.0
-offset_bottom = -48.0
-text = "Random"
-metadata/_edit_use_anchors_ = true
-
 [node name="Level1" type="Label" parent="."]
 offset_left = -171.0
 offset_top = -91.0
@@ -72,39 +28,46 @@ offset_right = -121.0
 offset_bottom = -68.0
 text = "Level1"
 
-[node name="WinTimer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 2.0
-one_shot = true
+[node name="TestBlocks" type="Node" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="TestBlocks"]
 position = Vector2(-20, 70)
+scale = Vector2(8.6, 0.24000049)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBlocks/StaticBody2D"]
 shape = SubResource("RectangleShape2D_fcfvj")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="TestBlocks/StaticBody2D"]
 texture = ExtResource("4_conm7")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="TestBlocks"]
 position = Vector2(104, -234)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBlocks/StaticBody2D2"]
 shape = SubResource("RectangleShape2D_fcfvj")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="TestBlocks/StaticBody2D2"]
 texture = ExtResource("4_conm7")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="TestBlocks"]
 position = Vector2(219, -210)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBlocks/StaticBody2D3"]
 shape = SubResource("RectangleShape2D_fcfvj")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="TestBlocks/StaticBody2D3"]
 texture = ExtResource("4_conm7")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="pressed" from="spawner" to="." method="_on_spawner_pressed"]
-[connection signal="pressed" from="rng_spawner" to="." method="_on_rng_spawner_pressed"]
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_enabled = false
+script = ExtResource("3_fcfvj")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_ejswk")]
+metadata/_edit_use_anchors_ = true
+
+[node name="MovableBlock" parent="." instance=ExtResource("5_d3jkd")]
+position = Vector2(-16, -77)
+
+[node name="WinCondition" parent="." instance=ExtResource("8_15mv3")]
+
+[node name="UI" parent="." instance=ExtResource("7_15mv3")]
