@@ -1,23 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cydkuaiq53qhl"]
+[gd_scene load_steps=3 format=3 uid="uid://cydkuaiq53qhl"]
 
-[ext_resource type="Script" uid="uid://b5uou2o61k8uv" path="res://scripts/rigid_body_2d.gd" id="1_pk4ck"]
-[ext_resource type="Texture2D" uid="uid://fnl1l63xtua4" path="res://assets/kenney_physics-assets/PNG/Wood elements/elementWood010.png" id="2_pk4ck"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gbuc"]
-size = Vector2(64, 64)
+[ext_resource type="Script" uid="uid://b5uou2o61k8uv" path="res://scripts/rigid_body_2d.gd" id="1_jska6"]
+[ext_resource type="Texture2D" uid="uid://faphuxq4n46k" path="res://assets/kenney_physics-assets/PNG/Wood elements/elementWood001.png" id="2_6jvfj"]
 
 [node name="MovableBlock" type="Node2D"]
 
 [node name="MovableBlock" type="RigidBody2D" parent="."]
-script = ExtResource("1_pk4ck")
+script = ExtResource("1_jska6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovableBlock"]
-shape = SubResource("RectangleShape2D_1gbuc")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MovableBlock"]
+position = Vector2(0, -2.3841858e-06)
+scale = Vector2(0.91428566, 0.91428566)
+polygon = PackedVector2Array(35, 35, 35, 32.812504, -32.8125, -34.999996, -35, -35, -35, 35)
 
 [node name="Sprite2D" type="Sprite2D" parent="MovableBlock"]
 position = Vector2(0, -2.3841858e-06)
 scale = Vector2(0.91428566, 0.91428566)
-texture = ExtResource("2_pk4ck")
+texture = ExtResource("2_6jvfj")
 
 [node name="Button" type="Button" parent="MovableBlock"]
 self_modulate = Color(1, 1, 1, 0)

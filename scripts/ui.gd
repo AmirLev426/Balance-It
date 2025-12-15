@@ -2,26 +2,26 @@ extends Control
 
 @onready var spawner: Button = $CanvasLayer/spawner
 @onready var rng_spawner: Button = $CanvasLayer/rng_spawner
+@onready var level_1: Node2D = $".."   # le monde 2D
 
-var movable_block = preload("res://scenes/movable_block.tscn")
-var movable_block2 = preload("res://scenes/movable_block2.tscn")
+var cercle := preload("res://scenes/blocks/cercle.tscn")
+var cube := preload("res://scenes/blocks/cube.tscn")
+var right_triangle := preload("res://scenes/blocks/right_triangle.tscn")
+var all_blocks := [cercle, cube, right_triangle]
 
-var all_blocks = [movable_block, movable_block2]
+func _on_spawner_pressed():
+	spawn_from_button(spawner, cube)
 
-#spawner
-func _on_spawner_pressed() -> void:
-	inst(spawner.get_global_position())
+func _on_rng_spawner_pressed():
+	spawn_from_button(rng_spawner, all_blocks.pick_random())
 
-func inst(pos): #on button press
-	var instance = movable_block.instantiate()
-	instance.position = pos
-	add_child(instance)
+func spawn_from_button(btn: Button, scene: PackedScene):
+	# position écran du bouton (CanvasLayer)
+	var pos_screen: Vector2 = btn.get_global_position()
 
-#random spawner
-func _on_rng_spawner_pressed() -> void:
-	inst_rng(rng_spawner.get_global_position())
+	# conversion écran → monde (Camera2D incluse)
+	var pos_world: Vector2 = get_viewport().get_canvas_transform().affine_inverse() * pos_screen
 
-func inst_rng(pos): #on button press
-	var instance_rng = all_blocks.pick_random().instantiate()
-	instance_rng.position = pos
-	add_child(instance_rng)
+	var instance = scene.instantiate()
+	instance.position = pos_world
+	level_1.add_child(instance)

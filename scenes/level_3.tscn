@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3cpsqshvhjh4"]
 
 [ext_resource type="Script" uid="uid://c6afbn78d6xwd" path="res://scripts/level_3.gd" id="1_p6vls"]
-[ext_resource type="PackedScene" uid="uid://bv4st2ckwqv5o" path="res://scenes/movable_block.tscn" id="1_uwxec"]
+[ext_resource type="PackedScene" uid="uid://bv4st2ckwqv5o" path="res://scenes/blocks/cube.tscn" id="1_uwxec"]
 [ext_resource type="Texture2D" uid="uid://c1r02n1m56ead" path="res://assets/icon.svg" id="2_1pn4d"]
 [ext_resource type="PackedScene" uid="uid://dssb1hu8qvte6" path="res://scenes/pause_menu.tscn" id="2_hhfj6"]
 [ext_resource type="Texture2D" uid="uid://6w71fh3mc2ij" path="res://assets/kenney_physics-assets/PNG/Stone elements/elementStone013.png" id="3_ah8om"]

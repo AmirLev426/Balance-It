@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://bv4st2ckwqv5o"]
 
-[ext_resource type="Script" uid="uid://b5uou2o61k8uv" path="res://scripts/rigid_body_2d.gd" id="1_63tbu"]
-[ext_resource type="Texture2D" uid="uid://c1r02n1m56ead" path="res://assets/icon.svg" id="2_rnngr"]
+[ext_resource type="Script" uid="uid://b5uou2o61k8uv" path="res://scripts/rigid_body_2d.gd" id="1_45fo4"]
+[ext_resource type="Texture2D" uid="uid://c1r02n1m56ead" path="res://assets/icon.svg" id="2_8g4ud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gbuc"]
 size = Vector2(64, 64)
 
-[node name="MovableBlock" type="Node2D"]
+[node name="Cube" type="Node2D"]
 
 [node name="MovableBlock" type="RigidBody2D" parent="."]
-script = ExtResource("1_63tbu")
+script = ExtResource("1_45fo4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovableBlock"]
 shape = SubResource("RectangleShape2D_1gbuc")
 
 [node name="Sprite2D" type="Sprite2D" parent="MovableBlock"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_rnngr")
+texture = ExtResource("2_8g4ud")
 
 [node name="Button" type="Button" parent="MovableBlock"]
 self_modulate = Color(1, 1, 1, 0)
